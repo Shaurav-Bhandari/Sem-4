@@ -1,0 +1,20 @@
+father(Tribhuwan,Mahendra).
+father(Mahendra,Birendra).
+father(Mahendra,Gyanandra).
+father(Birendra,Dipendra).
+father(Gyanandra,Paras).
+
+mother(Ash,Dipendra).
+mother(Ash,Nirajan).
+
+husband(Paras,Himani).
+husband(Kumar,Shruti).
+husband(Gyanandra, Komal).
+
+wife(Himani,Paras).
+wife(Shruti,Kumar).
+wife(Komal, Gyanandra).
+
+sibling(X,Y) :- mother(M,X),mother(M,Y).
+
+cousin(A,B) :- father(T,X),father(S,Y),sibling(T,S).

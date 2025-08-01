@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS Departments(
+    Dept_ID SERIAL PRIMARY KEY,
+    Dept_Name TEXT NOT NULL,
+    Dept_Block_No INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Staff(
+    Staff_ID SERIAL PRIMARY KEY,
+    Staff_Name TEXT NOT NULL,
+    Dept_ID INT,
+    CONSTRAINT fk_Dept_ID FOREIGN KEY (Dept_ID)
+    REFERENCES Departments(Dept_ID)
+)
